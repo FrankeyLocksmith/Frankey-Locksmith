@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frankey Locksmith | 24/7 Premium Locksmith Services Miami</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #d4af37; /* Luxury Gold */
+            --primary-hover: #aa841b;
+            --dark-bg: #121212;
+            --surface: #1e1e1e;
+            --surface-accent: #2a2a2a;
+            --text-light: #ffffff;
+            --text-muted: #b3b3b3;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--surface-accent);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .brand img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-text span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 20px 100px 20px;
+            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)), url('https://locksmith-v2.docxsite.net/uploads/car_lockout.jpg') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: #000;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid var(--surface-accent);
+        }
+
+        /* Sections General */
+        section {
+            padding: 90px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: var(--primary);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* Services Section */
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--surface);
+            border: 1px solid var(--surface-accent);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .service-img-container {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img-container img {
+            transform: scale(1.05);
+        }
+
+        .service-info {
+            padding: 25px;
+        }
+
+        .service-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .service-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--surface);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--primary);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            margin: 30px 0;
+            list-style: none;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .about-features i {
+            color: var(--primary);
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background-color: var(--surface);
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--surface-accent);
+            position: relative;
+        }
+
+        .stars {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .review-card p {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .reviewer-info span {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        /* FAQs Section */
+        .faq {
+            background-color: var(--surface);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--surface-accent);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px 25px;
+            max-height: 200px;
+        }
+
+        .faq-item i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        /* Contact Section Map integration */
+        .contact-section-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+        }
+
+        .contact-map iframe {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 350px;
+            border-radius: 6px;
+            border: 1px solid var(--surface-accent) !important;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0b0b;
+            padding: 70px 20px 20px 20px;
+            border-top: 1px solid var(--surface-accent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .contact-info-list {
+            list-style: none;
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-info-list i {
+            color: var(--primary);
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            border-top: 1px solid var(--surface-accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links-inline a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-links-inline a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-container, .about-container, .contact-section-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-image-wrapper {
+                order: -1;
+            }
+            .hero {
+                padding-top: 130px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Can be enhanced with JS burger menu if needed */
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links-inline a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <img src="https://frankeylocksmith.com/wp-content/uploads/2025/08/cropped-001.png" alt="Frankey Locksmith Logo">
+                <div class="brand-text">Frankey<span> Locksmith</span></div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Premium Locksmith & Security Solutions in <span>Miami</span></h1>
+                <p>Frankey Locksmith is your trusted provider of professional automotive, residential, and commercial locksmith security layout plans. Available 24 Hours a day for swift emergency response.</p>
+                <a href="tel:3052032739" class="btn"><i class="fas fa-phone-alt"></i> Call Now: (305) 203-2739</a>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://locksmith-v2.docxsite.net/uploads/car_lockout.jpg" alt="Automotive Lockout Services Emergency Support">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our Professional <span>Services</span></h2>
+            <p>We deliver elite security, fast response times, and dependable craftsmanship for all automotive, commercial, and residential lockout needs.</p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="https://locksmith-v2.docxsite.net/uploads/car_lockout.jpg" alt="Emergency Lockout Assistance">
+                </div>
+                <div class="service-info">
+                    <h3>Emergency Lockout Service</h3>
+                    <p>Locked out of your home, workspace, or car? Our rapid-response technicians deployment loop provides seamless lock picking and unlocking solutions quickly.</p>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="https://darrenbloggie.com/wp-content/uploads/2016/10/Copy-of-Bolt-.jpg" alt="Smart Lock Installation and Setup">
+                </div>
+                <div class="service-info">
+                    <h3>Smart Lock Installation</h3>
+                    <p>Upgrade to high-end digital access. We install, configure, and maintain modern smart deadbolts and biometric entrance entryways seamlessly.</p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="https://storables.com/wp-content/uploads/2023/12/how-to-pick-lock-a-car-door-1703562725.jpg" alt="Automotive Locksmith Lock Picking">
+                </div>
+                <div class="service-info">
+                    <h3>Automotive Locksmith</h3>
+                    <p>Specialized car door entry, transponder chip programming, key cutting, and key replacements right on the spot, anywhere in Miami, Florida.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-cta">
+            <a href="https://frankeylocksmith.com/our-services/" target="_blank" class="btn">Explore All Services <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About <span>Frankey Locksmith</span></h2>
+                <p>Frankey Locksmith stands as your premium asset protection partner throughout Miami, Florida. Our experienced technicians deliver fast, reliable, and affordable solutions engineered for absolute customer satisfaction.</p>
+                <p>Whether managing residential rekey configurations, updating robust corporate smart locks, or fixing sudden roadside auto lockouts, we utilize precise tooling to ensure seamless entry and flawless lock dynamics.</p>
+                <ul class="about-features">
+                    <li><i class="fas fa-check-circle"></i> Complete 24-Hour Availability Loop</li>
+                    <li><i class="fas fa-check-circle"></i> Licensed, Fully Insured & Bonded Techs</li>
+                    <li><i class="fas fa-check-circle"></i> Rapid Emergency Response Windows</li>
+                </ul>
+                <a href="https://frankeylocksmith.com/about-us/" target="_blank" class="btn">Learn More About Us</a>
+            </div>
+            <div class="about-image">
+                <img src="https://darrenbloggie.com/wp-content/uploads/2016/10/Copy-of-Bolt-.jpg" alt="Premium Smart Bolt Hardware Detail" style="width:100%; border-radius:6px; border: 1px solid var(--surface-accent);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews">
+        <div class="section-header">
+            <h2>What Our <span>Clients Say</span></h2>
+            <p>Read authenticated testimonies from home, commercial, and auto owners across the Miami metro region.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Lost my car keys late at night in Miami and Frankey Locksmith saved the day. Arrived within 20 minutes and made a brand new chip key on the spot. Elite service!"</p>
+                <div class="reviewer-info">
+                    <div>
+                        <h4>Carlos M.</h4>
+                        <span>Miami Resident</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"The smart lock installation was clean, fast, and highly professional. They walked me through configuring the application effortlessly. Strongly recommended."</p>
+                <div class="reviewer-info">
+                    <div>
+                        <h4>Sarah T.</h4>
+                        <span>Homeowner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"We had an unexpected storefront lock jam at our retail location. Their commercial dispatch team solved the emergency lockout in record time with fair pricing."</p>
+                <div class="reviewer-info">
+                    <div>
+                        <h4>David L.</h4>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Clear details about response timings, system service parameters, and locksmith options.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is your standard arrival time for an emergency lockout in Miami?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Our standard mobile response runtime across Miami ranges from 15 to 30 minutes, depending strictly on current traffic densities and your specific positioning location.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can you replace lost modern car transponder fobs on-site?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes. Our advanced service vans carry modern diagnostic key cutters and fob transponder code instruments to configure replacement vehicular keys on-scene.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Are your locksmith technicians fully insured and credentialed?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. Every single technician on our dispatch payroll is fully certified, bonded, and insured to maximize building security compliance and protection parameters.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Integration Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Get In Touch <span>With Us</span></h2>
+            <p>Available 24 Hours a day for immediate lock and security configurations support.</p>
+        </div>
+
+        <div class="contact-section-grid">
+            <div style="background-color: var(--surface); padding: 40px; border-radius: 6px; border: 1px solid var(--surface-accent);">
+                <h3 style="margin-bottom: 25px; text-transform: uppercase; font-size: 1.3rem;">Contact Info</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location Address:</strong><br>
+                            3692 Grand Ave, Miami, Florida 33133 USA
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Phone Helpline:</strong><br>
+                            <a href="tel:3052032739" style="color: var(--primary); text-decoration: none; font-weight: 600;">(305) 203-2739</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email Address:</strong><br>
+                            <a href="mailto:frankey@bellsouth.net" style="color: var(--text-light); text-decoration: none;">frankey@bellsouth.net</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Operational Hours:</strong><br>
+                            Open 24 Hours / 7 Days Active Loop
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28762.10218304967!2d-80.4440059!3d25.6957224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b7c9ea1c1a47%3A0x9f0fae37dbcaf80e!2sFrankey%20Locksmith!5e0!3m2!1sen!2s!4v1783712541198!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="brand" style="margin-bottom: 20px;">
+                    <img src="https://frankeylocksmith.com/wp-content/uploads/2025/08/cropped-001.png" alt="Frankey Locksmith Logo">
+                </div>
+                <p>Frankey Locksmith delivers premium high-grade emergency lock assistance, smart hardware systems integration, and automotive transponder key duplications in Miami, FL.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="contact-info-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 3692 Grand Ave, Miami, FL 33133 USA</li>
+                    <li><i class="fas fa-phone-alt"></i> (305) 203-2739</li>
+                    <li><i class="fas fa-envelope"></i> frankey@bellsouth.net</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 The Ranking Geeks. All Rights Reserved.
+            </div>
+            <div class="footer-links-inline">
+                <a href="https://maps.app.goo.gl/KQBTVAJkc25QDnxE9" target="_blank" rel="nofollow">GMB Profile</a>
+                <a href="https://www.google.com/search?kgmid=/g/1tqp_16t" target="_blank" rel="nofollow">Knowledge Graph</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAQ Dynamic Accordion Script Loop -->
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
